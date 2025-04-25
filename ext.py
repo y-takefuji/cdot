@@ -25,11 +25,11 @@ feature_names = df.columns
 et = ExtraTreesClassifier(n_estimators=100, random_state=RANDOM_STATE, n_jobs=-1)
 et.fit(X, y)
 importances = pd.Series(et.feature_importances_, index=feature_names)
-top_feats = importances.nlargest(10).index.tolist()
+top_feats = importances.nlargest(50).index.tolist()
 
-print("Top 10 features by importance:\n", importances.nlargest(10))
+print("Top 10 features by importance:\n", importances.nlargest(50))
 
-# 4) REDUCE TO TOP-10 & SPLIT
+# 4) REDUCE TO TOP-50 & SPLIT
 X_top = df[top_feats].values
 X_tr, X_te, y_tr, y_te = train_test_split(
     X_top, y,

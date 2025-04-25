@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 BINS         = 16
 TEST_SIZE    = 0.20
 RANDOM_STATE = 42
-TOPK         = 10
+TOPK         = 50
 
 # 1) LOAD & DROP UNUSED COLUMNS
 df = pd.read_csv("cdot_data.csv")
